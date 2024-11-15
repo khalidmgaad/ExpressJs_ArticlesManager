@@ -1,0 +1,11 @@
+doctype html
+html 
+    head
+        title #{title}
+    body
+         each article in articles
+            div
+                h1 #{article.title}
+                p #{article.content}
+                p Created "#{article.createdAt}" By: |AuthorId: #{article.authorId}|
+            br

@@ -29,8 +29,8 @@ const validateArticle = (req,res,next) => {
         }
     }
     
-    if (isCreateRequest || (!isCreateRequest && article.authorId)) {
-        if (!article.authorId || !Number.isInteger(article.authorId)) {
+    if (isCreateRequest || (!isCreateRequest && article.authorId)) {        
+        if (!article.authorId || !Number.isInteger(article.authorId) /* typeof article.authorId !== 'number' */) {
             return res.status(206).json({
                 error : "authorId must be a number"
             })
