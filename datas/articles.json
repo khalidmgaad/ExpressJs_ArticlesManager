@@ -1,0 +1,23 @@
+[
+  {
+    "id": 0,
+    "title": "Ara bra3 awlidi",
+    "content": "barra9. mat9cha3 a cha3bani",
+    "authorId": 1,
+    "createdAt": "2024-11-15T21:32:52.466Z"
+  },
+  {
+    "id": 1,
+    "title": "Ara bra3 awlidi",
+    "content": "barra9. mat9cha3 a cha3bani",
+    "authorId": 1,
+    "createdAt": "2024-11-15T21:32:56.201Z"
+  },
+  {
+    "id": 2,
+    "title": "Ara bra3 awlidi",
+    "content": "barra9. mat9cha3 a cha3bani",
+    "authorId": 1,
+    "createdAt": "2024-11-15T21:33:01.827Z"
+  }
+]

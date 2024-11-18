@@ -2,14 +2,15 @@ const articleRouter = require('express').Router();
 const validateArticle = require('../middlewares/validateArticle');
 const articleValidator = require('../middlewares/validateArticle');
 const listArticles = require('../datas/articles')
+const fileManager = require('../utils/fileHandler')
 
 //get articles
 articleRouter.get('/', (req,res) => {
-    
+
     res.status(200).json({
         articles: listArticles
     })
-
+    
     //res.render('articles', {articles: listArticles})
 
 })
@@ -32,6 +33,7 @@ articleRouter.get('/:id', (req,res) => {
 
     //res.render('article', article)
 })
+
 //create article
 articleRouter.post('/', articleValidator, (req,res) => {
 
@@ -43,12 +45,18 @@ articleRouter.post('/', articleValidator, (req,res) => {
         createdAt: new Date()
     })
 
+    console.log("write updates array to data file");
     
+    fileManager.writeToDataFile('./datas/articles.json', listArticles)
+
     res.status(200).json({
         message: "Article has been added!",
         article: listArticles[listArticles.length-1]
     })
+
+    
 })
+
 //update article
 articleRouter.put('/:id',validateArticle, (req,res) => {
 

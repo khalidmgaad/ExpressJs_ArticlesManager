@@ -1,5 +1,6 @@
 const authorRouter = require('express').Router();
 const listAuthors = require('../datas/authors')
+const fileManager = require('../utils/fileHandler')
 
 //get authors
 authorRouter.get('/', (req,res) => {
@@ -37,6 +38,7 @@ authorRouter.post('/', (req,res) => {
         ...author,
     })
 
+    fileManager.writeToDataFile('./datas/authors.json', listAuthors)
     
     res.status(200).json({
         message: "author has been added!",
